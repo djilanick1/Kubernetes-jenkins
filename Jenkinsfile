@@ -32,9 +32,9 @@ pipeline {
   stages {
     stage('OCI Image BnP') {
       steps {
-        git branch: 'main', url: 'https://github.com/fdjapi/Kubernetes-jenkins.git'
+        git branch: 'main', url: 'https://github.com/djilanick1/Kubernetes-jenkins.git'
         container('kaniko') {
-          sh "/kaniko/executor --force -f ${WORKSPACE}/Dockerfile -c ${WORKSPACE} --insecure --skip-tls-verify --cache=true --destination=docker.io/fdjapi10/dsodemo:v2"
+          sh "/kaniko/executor --force -f ${WORKSPACE}/Dockerfile -c ${WORKSPACE} --insecure --skip-tls-verify --cache=true --destination=docker.io/djilanick1/dsodemo:v2"
         }
       }
     }
